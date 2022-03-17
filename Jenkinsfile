@@ -5,7 +5,7 @@ pipeline {
             steps {
                // sh "rm -rf jenkins-node"
                 sh "git clone https://github.com/Patel-Viraj/jenkins-node.git"
-                sh "mvn clean -f jenkins-node"
+               // sh "mvn clean -f jenkins-node"
             }
         }
         stage('install') {

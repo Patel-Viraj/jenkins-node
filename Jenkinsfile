@@ -3,6 +3,7 @@ pipeline {
     stages {
             stage('Stop node'){
                 steps {
+                    echo "hello"
                    // sh "pkill node"
                 }
             }

@@ -3,7 +3,7 @@ pipeline {
     stages {
             stage('Stop node'){
                 steps {
-                    sh "pkill node"
+                   // sh "pkill node"
                 }
             }
             stage('Install packages'){

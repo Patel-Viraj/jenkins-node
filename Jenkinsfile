@@ -1,17 +1,32 @@
 pipeline {
     agent any
     stages {
-        stage('git repo & clean') {
-            steps {
-                sh "rm -rf jenkins-node"
-                sh "git clone https://github.com/Patel-Viraj/jenkins-node.git"
-               // sh "mvn clean -f jenkins-node"
+            stage('Stop node'){
+                steps {
+                    sh pkill node
+                }
             }
-        }
-        stage('install') {
-            steps {
-               sh "npm install -f jenkins-node"
+            stage('Install packages'){
+                 steps {
+                     sh npm i
+                 }
             }
-        }
+            stage('Run project'){
+                steps {
+                    sh node app.js
+                }
+            }
+        // stage('git repo & clean') {
+        //     steps {
+        //         sh "rm -rf jenkins-node"
+        //         sh "git clone https://github.com/Patel-Viraj/jenkins-node.git"
+        //        // sh "mvn clean -f jenkins-node"
+        //     }
+        // }
+        // stage('install') {
+        //     steps {
+        //        sh "npm install -f jenkins-node"
+        //     }
+        // }
     }
 }

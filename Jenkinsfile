@@ -3,17 +3,17 @@ pipeline {
     stages {
             stage('Stop node'){
                 steps {
-                    sh pkill node
+                    sh "pkill node"
                 }
             }
             stage('Install packages'){
                  steps {
-                     sh npm i
+                     sh "npm i"
                  }
             }
             stage('Run project'){
                 steps {
-                    sh node app.js
+                    sh "node app.js"
                 }
             }
         // stage('git repo & clean') {

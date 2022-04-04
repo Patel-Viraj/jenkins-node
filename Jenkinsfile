@@ -4,11 +4,13 @@ pipeline {
                  stage('Build') {
                   steps {
                      echo 'staring build the app'
+                     npm i
                   }
                  }
-                 stage('Test') {
+                 stage('build') {
                   steps {
-                        echo "App is tested"
+                        echo "App is building"
+                        npm build-dev
                    }
                  }
              
